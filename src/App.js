@@ -16,6 +16,10 @@ import FilterableProductTable from "./FilterableProductTable";
 import Meteronome from "./Metronome";
 import SignUpDialog from "./SignUpDialog";
 import ContextDemo from "./ContextDemo";
+import CounterButton from "./CounterButton";
+import AxiosGet from "./AxiosGet";
+import HookFirst from "./HookFirst";
+
 export default function App() {
   return (
     <Router>
@@ -34,7 +38,9 @@ export default function App() {
             <div className="col">
               <Link to="/topics">Topics</Link>
             </div>
-            <div className="col"></div>
+            <div className="col">
+              <Link to="/hooks">Hooks</Link>
+            </div>
           </nav>
         </div>
         <Switch>
@@ -43,6 +49,9 @@ export default function App() {
           </Route>
           <Route path="/topics">
             <Topics />
+          </Route>
+          <Route path="/hooks">
+            <Hooks />
           </Route>
           <Route path="/">
             <Home />
@@ -63,6 +72,7 @@ function Home() {
       <AjaxCall />
       <MultipleInputs />
       <FilterableProductTable />
+      <CounterButton />
     </div>
   );
 }
@@ -71,6 +81,7 @@ function About() {
     <div>
       <TodoApp />
       <SignUpDialog />
+      <AxiosGet />
     </div>
   );
 }
@@ -85,7 +96,7 @@ function Topics() {
           <Link to={`${match.url}/components`}>Components</Link>
         </li>
         <li>
-          <Link to={`${match.url}/props-v-state`}>Hello</Link>
+          <Link to={`${match.url}/Hello`}>Hello</Link>
         </li>
       </ul>
       <switch>
@@ -98,6 +109,9 @@ function Topics() {
       </switch>
     </div>
   );
+}
+function Hooks() {
+  return <HookFirst />;
 }
 function Topic() {
   let { topicId } = useParams();

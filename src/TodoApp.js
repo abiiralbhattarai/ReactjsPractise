@@ -5,13 +5,14 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isToggleOn: true };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
+  handleClick = () => {
     this.setState((state) => ({
       isToggleOn: !state.isToggleOn,
     }));
-  }
+  };
+
   render() {
     return (
       <button onClick={this.handleClick}>
@@ -45,6 +46,7 @@ class TodoApp extends React.Component {
             <li>
               {this.state.items.map((item) => (
                 <li key={item.id}>
+                  {item.id}
                   {item.text}
                   <button onClick={() => this.deleteItem(item.id)}>
                     Delete

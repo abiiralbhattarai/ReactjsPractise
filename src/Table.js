@@ -20,7 +20,7 @@ class Table extends React.Component {
           name: "Foo",
           age: "40",
         },
-         {
+        {
           id: 4,
           name: "Get",
           age: "50",
@@ -47,6 +47,7 @@ class TableRow extends React.Component {
     return (
       <tr>
         <td>{this.props.data.id}</td>
+        
         <td>{this.props.data.name}</td>
         <td>{this.props.data.age}</td>
       </tr>
