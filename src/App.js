@@ -19,6 +19,7 @@ import ContextDemo from "./ContextDemo";
 import CounterButton from "./CounterButton";
 import AxiosGet from "./AxiosGet";
 import HookFirst from "./HookFirst";
+import ContextHook from "./ContextHook";
 
 export default function App() {
   return (
@@ -111,7 +112,13 @@ function Topics() {
   );
 }
 function Hooks() {
-  return <HookFirst />;
+  return (
+    <>
+<HookFirst />
+<ContextHook />
+</>
+
+  );
 }
 function Topic() {
   let { topicId } = useParams();
