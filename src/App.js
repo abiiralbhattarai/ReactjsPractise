@@ -20,6 +20,8 @@ import CounterButton from "./CounterButton";
 import AxiosGet from "./AxiosGet";
 import HookFirst from "./HookFirst";
 import ContextHook from "./ContextHook";
+import TodoAppHook from "./TodoAppHook";
+import BookListFetch from "./BookListFetch";
 
 export default function App() {
   return (
@@ -114,10 +116,11 @@ function Topics() {
 function Hooks() {
   return (
     <>
-<HookFirst />
-<ContextHook />
-</>
-
+      <HookFirst />
+      <ContextHook />
+      <TodoAppHook />
+      <BookListFetch />
+    </>
   );
 }
 function Topic() {
